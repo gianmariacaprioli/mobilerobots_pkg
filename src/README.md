@@ -1,0 +1,1 @@
+qui ci vanno i .py della logica centralizzata e dei nodi custom di ros
