@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<launch>
+
+<!-- Gazebo -->
+    <include file="$(find gazebo_simulation_pkg)/launch/multi_turtlebot3_closeworld2.launch"></include>
+
+
+
+<!-- Move_base -->
+    <include file="$(find navigation_pkg)/launch/turtlebot3_navigation_test.launch"></include>
+
+</launch>
