@@ -7,8 +7,35 @@ project(navigation_pkg)
 ################################################################################
 # Find catkin packages and libraries for catkin and system dependencies
 ################################################################################
-find_package(catkin REQUIRED)
+find_package(catkin REQUIRED COMPONENTS
+actionlib
+actionlib_msgs
+geometry_msgs
+move_base_msgs
+rospy
+roscpp
+std_msgs
+message_generation
+nav_msgs
+)
 
+
+add_service_files(
+   FILES
+   get_state.srv
+   set_state.srv
+   toggle_state.srv
+   reset.srv
+)
+
+generate_messages(
+   DEPENDENCIES
+   actionlib_msgs
+   geometry_msgs
+   move_base_msgs
+   nav_msgs
+   std_msgs
+)
 ################################################################################
 # Setup for python modules and scripts
 ################################################################################

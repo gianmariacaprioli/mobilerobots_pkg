@@ -1,0 +1,5 @@
+<launch>
+
+     <node pkg="navigation_pkg" type="test_point_publisher.py" name="point_publisher"/>
+     
+</launch>
