@@ -442,7 +442,7 @@ Visualization Manager:
       X std deviation: 0.5
       Y std deviation: 0.5
     - Class: rviz/SetGoal
-      Topic: /tb3_1/move_base_simple/goal
+      Topic: /tb3_0/move_base_simple/goal
     - Class: rviz/PublishPoint
       Single click: true
       Topic: ""
@@ -466,9 +466,9 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.9447969198226929
+      Pitch: 0.5547969937324524
       Target Frame: <Fixed Frame>
-      Yaw: 5.849050521850586
+      Yaw: 4.4044976234436035
     Saved: ~
 Window Geometry:
   Displays:
@@ -486,5 +486,5 @@ Window Geometry:
   Views:
     collapsed: true
   Width: 1917
-  X: 512
-  Y: 128
+  X: 643
+  Y: 54

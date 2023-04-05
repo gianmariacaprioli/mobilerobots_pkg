@@ -9,4 +9,7 @@
 <!-- Move_base -->
     <include file="$(find navigation_pkg)/launch/turtlebot3_navigation_test.launch"></include>
 
+<!-- publisher della posa
+    <node pkg="navigation_pkg" type="goal_publisher.py" name="goal_publisher" respawn="false"/>
+-->
 </launch>

@@ -1,4 +1,4 @@
-
-bool state
+int64 x
+int64 y
 ---
-bool success
+int64 result
