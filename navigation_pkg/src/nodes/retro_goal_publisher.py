@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import rospy
+import numbers as np
 from geometry_msgs.msg import PoseStamped
 from actionlib import GoalStatusArray, GoalID
 
