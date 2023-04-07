@@ -12,11 +12,11 @@ class RepeatMoveBaseGoal:
     def __init__(self):
         rospy.init_node('repeat_move_base_goal')
         
-        self.goal_pub = rospy.Publisher('/tb3_1/move_base_simple/goal', PoseStamped, queue_size=10)
-        rospy.Subscriber('/tb3_1/move_base/status', GoalStatusArray, self.goal_status_callback)
-        rospy.Subscriber('/tb3_1/move_base/feedback', MoveBaseActionFeedback, self.feedback_callback)
-        rospy.Subscriber('/tb3_1/odom',Odometry,self.odom_cb)
-        self.cancel_pub = rospy.Publisher('/tb3_1/move_base/cancel', GoalID, queue_size=10)
+        self.goal_pub = rospy.Publisher('/tb3_0/move_base_simple/goal', PoseStamped, queue_size=10)
+        rospy.Subscriber('/tb3_0/move_base/status', GoalStatusArray, self.goal_status_callback)
+        rospy.Subscriber('/tb3_0/move_base/feedback', MoveBaseActionFeedback, self.feedback_callback)
+        rospy.Subscriber('/tb3_0/odom',Odometry,self.odom_cb)
+        self.cancel_pub = rospy.Publisher('/tb3_0/move_base/cancel', GoalID, queue_size=10)
 
         self.rate = rospy.Rate(0.90) 
         self.goal_reached = False
@@ -24,7 +24,7 @@ class RepeatMoveBaseGoal:
         self.xp_odom=0.0
         self.yp_odom=0.0
         self.i = 0
-        self.goal_list=[[3.0,1.0,1.0],[5.0,3.0,1.0],[5.0,5.0,1.0]]
+        self.goal_list=[[-5.0,1.0,1.0],[-5.0,3.0,1.0],[-5.0,5.0,1.0]]
         #self.goal_list = []
 
     def run(self):
@@ -88,7 +88,7 @@ class RepeatMoveBaseGoal:
             self.goal_reached = False
 
         if self.i > 2:
-            self.goal_list.append([5,float(random.randint(-8,8)),1])
+            self.goal_list.append([-5,float(random.randint(-8,8)),1])
             # goal_list[self.i][0] = 5
             # goal_list[self.i][1] = float(random.randint(-8,8))
             # goal_list[self.i][2] = 1

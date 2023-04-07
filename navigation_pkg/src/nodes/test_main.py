@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
 import rospy
-import src.nodes.tb3_1_odom_sub as tb3_1_odom_sub
+import tb3_0_goal_ps
+import tb3_1_goal_ps
 
 if __name__ == '__main__':
-    res= tb3_1_odom_sub.OdomListener()
-    x= res.get_position
-    print(res.x)
+    tb3_1 = tb3_1_goal_ps.RepeatMoveBaseGoal()
+    tb3_1.run()
+    tb3_0 = tb3_0_goal_ps.RepeatMoveBaseGoal()
+    tb3_0.run()
 
