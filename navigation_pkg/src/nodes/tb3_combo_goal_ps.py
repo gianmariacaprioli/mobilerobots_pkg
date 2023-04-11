@@ -88,9 +88,8 @@ class RepeatMoveBaseGoal:
                 print("nel while interno i =" + str(self.i))
                 self.rate.sleep()
 
-
-                if (abs(abs(self.tb3_0_xp_odom) - abs(x0)) <= 0.5
-                    and (abs(abs(self.tb3_0_yp_odom) - abs(y0)) <= 0.5)):
+                if (((x0 - self.tb3_0_xp_odom) < 0.5 and (x0 - self.tb3_0_xp_odom) > -0.5) and
+                    ((y0 - self.tb3_0_yp_odom) < 0.5 and (y0 - self.tb3_0_yp_odom) > -0.5)):
                     self.tb3_0_goal_reached = True
                     self.tb3_0_goal_reaching = False
                     self.tb3_0_goal_ng = True
@@ -109,8 +108,8 @@ class RepeatMoveBaseGoal:
                 self.rate.sleep()
 
 
-                if (abs(abs(self.tb3_1_xp_odom) - abs(x1)) <= 0.5
-                    and (abs(abs(self.tb3_1_yp_odom) - abs(y1)) <= 0.5)):
+                if (((x1 - self.tb3_1_xp_odom) < 0.5 and (x1 - self.tb3_1_xp_odom) > -0.5) and
+                    ((y1 - self.tb3_1_yp_odom) < 0.5 and (y1 - self.tb3_1_yp_odom) > -0.5)):
                     self.tb3_1_goal_reached = True
                     self.tb3_1_goal_reaching = False
                     self.tb3_1_goal_ng = True
@@ -125,18 +124,19 @@ class RepeatMoveBaseGoal:
 
         #goal_list = [[3.0,1.0,1.0],[5.0,3.0,1.0],[5.0,5.0,1.0]]
         if(index<=2 and self.tb3_0_goal_ng == True):
-            x = self.tb3_0_goal_list[self.i][0]
-            y = self.tb3_0_goal_list[self.i][1]
-            qz =self.tb3_0_goal_list[self.i][2]
+            x0 = self.tb3_0_goal_list[self.i][0]
+            y0 = self.tb3_0_goal_list[self.i][1]
+            qz0 =self.tb3_0_goal_list[self.i][2]
             self.goal_reached = False
             self.i = self.i + 1
-            return x,y,qz
+            return x0,y0,qz0
         
         elif(index>2 and self.tb3_0_goal_ng == True):
             self.tb3_0_goal_list.append([-5,float(random.randint(-8,8)),1])
             x = self.tb3_0_goal_list[self.i][0]
             y = self.tb3_0_goal_list[self.i][1]
             qz =self.tb3_0_goal_list[self.i][2]
+            self.goal_reached = False
             self.i = self.i + 1
             return x,y,qz
         
