@@ -9,8 +9,8 @@
 <!-- Move_base -->
     <include file="$(find navigation_pkg)/launch/turtlebot3_navigation_test.launch"></include>
 
-<!-- publisher della posa
-    <node pkg="navigation_pkg" type="tb3_1_goal_ps.py" name="tb3_1_goal_publisher" respawn="false"/>
-    <node pkg="navigation_pkg" type="tb3_0_goal_ps.py" name="tb3_0_goal_publisher" respawn="false"/>
--->
+<!-- publisher della posa-->
+    <node pkg="navigation_pkg" type="T_tb3_combo_goal_ps.py" name="T_tb3_combo_goal_publisher" respawn="false"/>
+
+
 </launch>

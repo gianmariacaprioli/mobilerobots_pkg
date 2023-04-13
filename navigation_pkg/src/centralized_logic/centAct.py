@@ -4,6 +4,7 @@ from functions import comp_d_ab
 from functions import func_f_theta
 
 
+
 ###########################################################################
 
 def nextNode_comp(A_env,Pos_corr,N_nodes,Nodes,K,D_tol,nextNode,Lambda,task,Q_Lambda): 
@@ -14,7 +15,7 @@ def nextNode_comp(A_env,Pos_corr,N_nodes,Nodes,K,D_tol,nextNode,Lambda,task,Q_La
         # Calcola la distanza D_ab fra il robot considerato (j-esimo) e il 
         # nodo che nel time step precedente era il nodo da raggiungere
         b_temp = int(nextNode[j]) # (0 4 8) tecnicamente il successivo nodo da raggiungere computato
-                                  # nell'iterazione precedente
+                                # nell'iterazione precedente
         #print("il nodo "+str(b_temp)+" è il nodo successivo del robot "+ str(j)+"\n")
 
         ax = Pos_corr[j,0]
@@ -103,9 +104,9 @@ def nextNode_comp(A_env,Pos_corr,N_nodes,Nodes,K,D_tol,nextNode,Lambda,task,Q_La
                     if(next_cand==1):
                         break
                     elif (func_f_theta (Nodes,task[j,0],b_temp,Pos_cand[m])==0):
-                         c=m
-                         print("######################## Il nodo candidato "+str(Pos_cand[m])+" non è ammissibile perchè F[x]=0 ########################")
-                         continue
+                        c=m
+                        print("######################## Il nodo candidato "+str(Pos_cand[m])+" non è ammissibile perchè F[x]=0 ########################")
+                        continue
                     else:
                         for n in range(0,K,1): # conto da 0 a K con step 1 
 
@@ -210,3 +211,4 @@ def nextNode_comp(A_env,Pos_corr,N_nodes,Nodes,K,D_tol,nextNode,Lambda,task,Q_La
                         print("\n########### per il nodo " + str(Pos_cand[y]) +" VPMAX FINALE è: " + str(vP_max))  
         D_ab=0
     return nextNode
+
