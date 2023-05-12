@@ -442,7 +442,7 @@ Visualization Manager:
       X std deviation: 0.5
       Y std deviation: 0.5
     - Class: rviz/SetGoal
-      Topic: /tb3_0/move_base_simple/goal
+      Topic: /tb3_1/move_base_simple/goal
     - Class: rviz/PublishPoint
       Single click: true
       Topic: ""
@@ -450,7 +450,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 25.10586166381836
+      Distance: 22.718528747558594
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
@@ -458,17 +458,17 @@ Visualization Manager:
         Value: false
       Field of View: 0.7853981852531433
       Focal Point:
-        X: -1.6393622159957886
-        Y: -0.2496490776538849
-        Z: 2.408778429031372
+        X: -1.7484817504882812
+        Y: 2.1835479736328125
+        Z: 0.0009021759033203125
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.964795708656311
+      Pitch: 1.0602298974990845
       Target Frame: <Fixed Frame>
-      Yaw: 3.1308610439300537
+      Yaw: 3.1244962215423584
     Saved: ~
 Window Geometry:
   Displays:
